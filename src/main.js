@@ -1,3 +1,5 @@
+`use strict`;
+
 const createMenuTemplate = () => {
   return (
     `<section class="control__btn-wrap">
@@ -469,7 +471,7 @@ const pageBoardElem = pageMainElem.querySelector(`.board`);
 const pageTaskListElem = pageMainElem.querySelector(`.board__tasks`);
 render(pageTaskListElem, createCardEditTemplate());
 
-for(let i = 0; i < 3; i++) {
+for (let i = 0; i < 3; i++) {
   render(pageTaskListElem, createCardTemplate());
 }
 
