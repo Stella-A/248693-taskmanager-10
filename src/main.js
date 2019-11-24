@@ -1,5 +1,5 @@
 import {createMenuTemplate} from './components/menu.js';
-import {createSortingTemplate} from './components/sorting';
+import {createSortingTemplate} from './components/sorting.js';
 import {createFilterTemplate} from './components/filter.js';
 import {createTaskTemplate} from './components/task.js';
 import {createTaskEditTemplate} from './components/task-edit.js';
