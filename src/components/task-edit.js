@@ -26,18 +26,18 @@ const createHashtagsTemplate = (hashtags) => {
 
 const createColorsTaskTemplate = (colors, currentColor) => {
   return colors
-    .map((color) => {
+    .map((color, i) => {
       return (
         `<input
           type="radio"
-          id="color-${color}-4"
+          id="color-${color}-${i}"
           class="card__color-input card__color-input--${color} visually-hidden"
           name="color"
           value="${color}"
           ${(color === currentColor) ? `checked` : ``}
         />
         <label
-          for="color-${color}-4"
+          for="color-${color}-${i}"
           class="card__color card__color--${color}"
           >${color}</label>`
       );
@@ -47,19 +47,19 @@ const createColorsTaskTemplate = (colors, currentColor) => {
 
 const createDaysTaskTemplate = (days, repeatingDays) => {
   return days
-    .map((day) => {
+    .map((day, i) => {
       const isChecked = repeatingDays[day];
 
       return (
         `<input
           class="visually-hidden card__repeat-day-input"
           type="checkbox"
-          id="repeat-${day}-4"
+          id="repeat-${day}-${i}"
           name="repeat"
           value="${day}"
           ${isChecked ? `checked` : ``}
         />
-        <label class="card__repeat-day" for="repeat-${day}-4">${day}</label>`
+        <label class="card__repeat-day" for="repeat-${day}-${i}">${day}</label>`
       );
     })
     .join(`\n`);

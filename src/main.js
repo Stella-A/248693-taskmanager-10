@@ -28,10 +28,15 @@ render(pageMainElem, createBoardTemplate());
 const pageBoardElem = pageMainElem.querySelector(`.board`);
 render(pageBoardElem, createSortingTemplate(), `afterbegin`);
 const pageTaskListElem = pageMainElem.querySelector(`.board__tasks`);
-render(pageTaskListElem, createTaskEditTemplate(tasks[0]));
 
 let showingTasksCount = SHOWING_TASKS_COUNT_ON_START;
-tasks.slice(1, showingTasksCount).forEach((task) => render(pageTaskListElem, createTaskTemplate(task)));
+for (let i = 0; i < showingTasksCount; i++) {
+  if (i === 0) {
+    render(pageTaskListElem, createTaskEditTemplate(tasks[i]));
+  } else {
+    render(pageTaskListElem, createTaskTemplate(tasks[i]));
+  }
+}
 
 render(pageBoardElem, createLoadMoreButtonTemplate());
 
