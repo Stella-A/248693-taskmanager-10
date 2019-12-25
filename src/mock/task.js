@@ -77,10 +77,8 @@ const generateTask = () => {
   };
 };
 
-const generateTasks = (count) => {
+export const generateTasks = (count) => {
   return new Array(count)
     .fill(``)
     .map(generateTask);
 };
-
-export {generateTasks};
